@@ -1,4 +1,35 @@
-*{
-    margin: 0;
-    padding: 0;
+
+:root {
+  --bg: #2c3e50;
+  --fg: #ecf0f1;
 }
+#theme-toggle:checked ~ .desktop,
+#theme-toggle:checked ~ .window,
+#theme-toggle:checked ~ .note,
+#theme-toggle:checked ~ .taskbar,
+#theme-toggle:checked ~ .start-menu {
+  --bg: #ecf0f1;
+  --fg: #2c3e50;
+}
+
+body { margin:0; font-family: sans-serif; background: var(--bg); color: var(--fg); }
+.icon { display:inline-block; margin:20px; padding:10px; border:1px solid; cursor:pointer; }
+.taskbar { position:fixed; bottom:0; left:0; right:0; background:var(--bg); color:var(--fg); padding:5px; display:flex; justify-content:space-between; }
+.note { position:fixed; right:20px; bottom:60px; width:150px; height:150px; background:rgb(125, 41, 167); padding:10px; }
+
+.window { display:none; position:fixed; top:20%; left:30%; width:250px; background:var(--bg); color:var(--fg); border:1px solid; }
+.window header { display:flex; justify-content:space-between; background:rgba(0,0,0,0.2); padding:5px; }
+.close { cursor:pointer; }
+
+#win-about:checked ~ .window.about { display:block; }
+
+.start-menu { display:none; position:fixed; bottom:40px; left:10px; background:var(--bg); padding:10px; border:1px solid; }
+#start-toggle:checked ~ .start-menu { display:block; }
+
+.clock { position:fixed; left:20px; bottom:60px; width:80px; height:80px; border:2px solid var(--fg); border-radius:50%; }
+.hand { position:absolute; left:50%; bottom:50%; width:2px; transform-origin:bottom; background:var(--fg); }
+.hour { height:20px; animation:spin 43200s linear infinite; }
+.min  { height:30px; animation:spin 3600s linear infinite; }
+.sec  { height:35px; background:red; animation:spin 60s linear infinite; }
+@keyframes spin { to { transform:rotate(360deg); } }
+
