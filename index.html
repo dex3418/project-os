@@ -7,9 +7,48 @@
     <meta name="author" content="Malhar_Dev_Yash_Neetu_Varsha">
     <link rel="stylesheet" href="style.css">
     <title>Project 2 O.S.</title>
-</head>
-<body>
     
     <script src="app.js"></script>
+<body>
+
+  <input type="checkbox" id="theme-toggle">
+
+  <input type="checkbox" id="start-toggle">
+
+  <input type="checkbox" id="win-about">
+
+  <div class="desktop">
+
+    <label for="win-about" class="icon">💬 About</label>
+    <a href="#note" class="icon">📝 Notes</a>
+  </div>
+
+  <div class="window about">
+    <header>
+      <h2>About Mini OS</h2>
+      <label for="win-about" class="close">X</label>
+    </header>
+    <p>Welcome to our mini os</p>
+  </div>
+
+  <div id="note" class="note" contenteditable="true">
+    Type here...
+  </div>
+
+  <div class="clock">
+    <div class="hand hour"></div>
+    <div class="hand min"></div>
+    <div class="hand sec"></div>
+  </div>
+
+  <div class="taskbar">
+    <label for="start-toggle" class="start">Start</label>
+    <label for="theme-toggle" class="theme">🌙/☀️</label>
+  </div>
+
+  <div class="start-menu">
+    <label for="win-about">Open About</label><br>
+    <a href="#note">Open Notes</a>
+  </div>
 </body>
 </html>
